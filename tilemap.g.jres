@@ -40,17 +40,17 @@
         "tilemapTile": true,
         "displayName": "outline"
     },
-    "tile8": {
-        "data": "hwQQABAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAkJkNAAAA4N+dmYmI6ADg3Z2ZiYjoAODfnZmJiOgA4O6dmYmI6AAAAJCZDQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-        "mimeType": "image/x-mkcd-f4",
-        "tilemapTile": true,
-        "displayName": "char_l"
-    },
     "tile7": {
         "data": "hwQQABAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAkJkNAAAA4O6dmYmI6ADg352ZiYjoAODdnZmJiOgA4N+dmYmI6AAAAJCZDQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
         "mimeType": "image/x-mkcd-f4",
         "tilemapTile": true,
         "displayName": "char_r"
+    },
+    "tile8": {
+        "data": "hwQQABAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAkJkNAAAA4N+dmYmI6ADg3Z2ZiYjoAODfnZmJiOgA4O6dmYmI6AAAAJCZDQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+        "mimeType": "image/x-mkcd-f4",
+        "tilemapTile": true,
+        "displayName": "char_l"
     },
     "level1": {
         "id": "level1",

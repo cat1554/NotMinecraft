@@ -6,6 +6,15 @@ controller.up.onEvent(ControllerButtonEvent.Pressed, function () {
         mySprite.vy = -60
     }
 })
+controller.B.onEvent(ControllerButtonEvent.Pressed, function () {
+    textSprite = textsprite.create("MORE AT:", 15, 1)
+    textSprite.setPosition(mySprite.x - 0, mySprite.y + 24)
+    textSprite = textsprite.create("totallylegitwebsite.online", 15, 1)
+    textSprite.setPosition(mySprite.x - 0, mySprite.y + 36)
+    textSprite = textsprite.create("/game.html", 15, 1)
+    textSprite.setPosition(mySprite.x - 0, mySprite.y + 48)
+    info.changeLifeBy(-1)
+})
 controller.A.onEvent(ControllerButtonEvent.Pressed, function () {
     if (!(mySprite2.tileKindAt(TileDirection.Center, assets.tile`mizu`))) {
         tiles.setTileAt(tiles.getTileLocation(Math.round(mySprite2.x / 16) - 1, Math.round(mySprite2.y / 16) - 1), assets.tile`mizu`)
@@ -92,8 +101,10 @@ game.onUpdateInterval(50, function () {
     }
     if (facingDir == 1) {
         mySprite2.setPosition(Math.round((mySprite.x + 10) / 16) * 16 + 8, Math.round((mySprite.y - 10) / 16) * 16 + 8)
+        mySprite.setImage(assets.tile`char_r`)
     } else if (facingDir == -1) {
         mySprite2.setPosition(Math.round((mySprite.x - 10) / 16) * 16 - 8, Math.round((mySprite.y - 10) / 16) * 16 + 8)
+        mySprite.setImage(assets.tile`char_l`)
     } else if (facingDir == 0) {
         mySprite2.setPosition(Math.round((mySprite.x - 10) / 16) * 16 + 8, Math.round((mySprite.y - 10) / 16) * 16 + 24)
     }
