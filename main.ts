@@ -7,8 +7,13 @@ controller.up.onEvent(ControllerButtonEvent.Pressed, function () {
     }
 })
 controller.A.onEvent(ControllerButtonEvent.Pressed, function () {
-    tiles.setTileAt(tiles.getTileLocation(Math.round(mySprite2.x / 16) - 1, Math.round(mySprite2.y / 16) - 1), assets.tile`sand`)
-    tiles.setWallAt(tiles.getTileLocation(Math.round(mySprite2.x / 16) - 1, Math.round(mySprite2.y / 16) - 1), false)
+    if (!(mySprite2.tileKindAt(TileDirection.Center, assets.tile`mizu`))) {
+        tiles.setTileAt(tiles.getTileLocation(Math.round(mySprite2.x / 16) - 1, Math.round(mySprite2.y / 16) - 1), assets.tile`mizu`)
+        tiles.setWallAt(tiles.getTileLocation(Math.round(mySprite2.x / 16) - 1, Math.round(mySprite2.y / 16) - 1), false)
+    } else {
+        tiles.setTileAt(tiles.getTileLocation(Math.round(mySprite2.x / 16) - 1, Math.round(mySprite2.y / 16) - 1), assets.tile`d`)
+        tiles.setWallAt(tiles.getTileLocation(Math.round(mySprite2.x / 16) - 1, Math.round(mySprite2.y / 16) - 1), true)
+    }
 })
 info.onLifeZero(function () {
     if (before == 0) {
@@ -62,24 +67,7 @@ if (false) {
 } else {
 	
 }
-mySprite = sprites.create(img`
-    8 8 8 8 8 8 8 8 8 8 8 8 8 8 8 8 
-    8 8 8 8 8 8 8 8 8 8 8 8 8 8 8 8 
-    8 8 8 8 8 8 8 8 8 8 8 8 8 8 8 8 
-    8 8 8 8 8 8 8 8 8 8 8 8 8 8 8 8 
-    8 8 8 8 8 8 8 8 8 8 8 8 8 8 8 8 
-    8 8 8 8 8 8 8 8 8 8 8 8 8 8 8 8 
-    8 8 8 8 8 8 8 8 8 8 8 8 8 8 8 8 
-    8 8 8 8 8 8 8 8 8 8 8 8 8 8 8 8 
-    8 8 8 8 8 8 8 8 8 8 8 8 8 8 8 8 
-    8 8 8 8 8 8 8 8 8 8 8 8 8 8 8 8 
-    8 8 8 8 8 8 8 8 8 8 8 8 8 8 8 8 
-    8 8 8 8 8 8 8 8 8 8 8 8 8 8 8 8 
-    8 8 8 8 8 8 8 8 8 8 8 8 8 8 8 8 
-    8 8 8 8 8 8 8 8 8 8 8 8 8 8 8 8 
-    8 8 8 8 8 8 8 8 8 8 8 8 8 8 8 8 
-    8 8 8 8 8 8 8 8 8 8 8 8 8 8 8 8 
-    `, SpriteKind.Player)
+mySprite = sprites.create(assets.tile`char_r`, SpriteKind.Player)
 mySprite2 = sprites.create(assets.tile`outline`, SpriteKind.outline)
 scene.cameraFollowSprite(mySprite)
 before = 0
@@ -108,11 +96,5 @@ game.onUpdateInterval(50, function () {
         mySprite2.setPosition(Math.round((mySprite.x - 10) / 16) * 16 - 8, Math.round((mySprite.y - 10) / 16) * 16 + 8)
     } else if (facingDir == 0) {
         mySprite2.setPosition(Math.round((mySprite.x - 10) / 16) * 16 + 8, Math.round((mySprite.y - 10) / 16) * 16 + 24)
-    }
-})
-game.onUpdateInterval(500, function () {
-    if (!(mySprite.tileKindAt(TileDirection.Center, assets.tile`transparency16`))) {
-        music.smallCrash.play()
-        info.changeLifeBy(-1)
     }
 })
