@@ -7,6 +7,12 @@ controller.up.onEvent(ControllerButtonEvent.Pressed, function () {
     }
 })
 controller.B.onEvent(ControllerButtonEvent.Pressed, function () {
+    textSprite = textsprite.create("「NOT MINECRAFT」", 15, 1)
+    textSprite.setPosition(mySprite.x - 0, mySprite.y - 48)
+    textSprite = textsprite.create("By cat1554", 15, 1)
+    textSprite.setPosition(mySprite.x - 0, mySprite.y - 36)
+    textSprite = textsprite.create("cat1554, 2021", 15, 1)
+    textSprite.setPosition(mySprite.x - 0, mySprite.y - 24)
     textSprite = textsprite.create("MORE AT:", 15, 1)
     textSprite.setPosition(mySprite.x - 0, mySprite.y + 24)
     textSprite = textsprite.create("totallylegitwebsite.online", 15, 1)
